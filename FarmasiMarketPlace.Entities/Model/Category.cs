@@ -10,10 +10,4 @@ namespace FarmasiMarketPlace.Entities.Model
         public string Name { get; set; }
     }
 
-    public class CategoryLookedUp : Category
-    {
-        public string Name { get; set; }
-
-    }
-
 }

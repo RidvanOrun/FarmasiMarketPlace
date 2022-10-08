@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FarmasiMarketPlace.Core", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FarmasiMarketPlace.DAL", "FarmasiMarketPlace.DAL\FarmasiMarketPlace.DAL.csproj", "{7ECAFC97-6793-4D77-BBD2-D6CFEB99A97F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FarmasiMarketPlace.Business", "FarmasiMarketPlace.Business\FarmasiMarketPlace.Business.csproj", "{392E9205-F530-44D9-9665-A46CAE4AAE6A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FarmasiMarketPlace.API", "FarmasiMarketPlace.API\FarmasiMarketPlace.API.csproj", "{A92E4A48-8E2D-40A0-B7CF-15068B7D5CCA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{7ECAFC97-6793-4D77-BBD2-D6CFEB99A97F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7ECAFC97-6793-4D77-BBD2-D6CFEB99A97F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7ECAFC97-6793-4D77-BBD2-D6CFEB99A97F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{392E9205-F530-44D9-9665-A46CAE4AAE6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{392E9205-F530-44D9-9665-A46CAE4AAE6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{392E9205-F530-44D9-9665-A46CAE4AAE6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{392E9205-F530-44D9-9665-A46CAE4AAE6A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A92E4A48-8E2D-40A0-B7CF-15068B7D5CCA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A92E4A48-8E2D-40A0-B7CF-15068B7D5CCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A92E4A48-8E2D-40A0-B7CF-15068B7D5CCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A92E4A48-8E2D-40A0-B7CF-15068B7D5CCA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

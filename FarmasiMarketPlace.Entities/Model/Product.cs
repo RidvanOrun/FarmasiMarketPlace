@@ -17,7 +17,7 @@ namespace FarmasiMarketPlace.Entities.Model
 
     public class ProductLookedUp : Product
     {
-        public CategoryLookedUp Category { get; set; }
+        public Category Category { get; set; }
 
     }
 }

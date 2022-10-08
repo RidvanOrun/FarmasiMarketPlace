@@ -46,5 +46,10 @@ namespace FarmasiMarketPlace.DAL.Repositories
 
             return response;
         }
+
+        public IAggregateFluent<TDocument> Aggregate(AggregateOptions options = null)
+        {
+            return _collection.Aggregate(options);
+        }
     }
 }
