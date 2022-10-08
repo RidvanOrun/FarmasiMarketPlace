@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FarmasiMarketPlace.Entities
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FarmasiMarketPlace.Core", "FarmasiMarketPlace.Core\FarmasiMarketPlace.Core.csproj", "{CAF7239E-053A-4AE4-A9C9-8D33E4452FB4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FarmasiMarketPlace.DAL", "FarmasiMarketPlace.DAL\FarmasiMarketPlace.DAL.csproj", "{7ECAFC97-6793-4D77-BBD2-D6CFEB99A97F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{CAF7239E-053A-4AE4-A9C9-8D33E4452FB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CAF7239E-053A-4AE4-A9C9-8D33E4452FB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CAF7239E-053A-4AE4-A9C9-8D33E4452FB4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7ECAFC97-6793-4D77-BBD2-D6CFEB99A97F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7ECAFC97-6793-4D77-BBD2-D6CFEB99A97F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7ECAFC97-6793-4D77-BBD2-D6CFEB99A97F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7ECAFC97-6793-4D77-BBD2-D6CFEB99A97F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
