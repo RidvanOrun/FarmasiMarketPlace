@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using FarmasiMarketPlace.Business.Interfcae;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,12 @@ namespace FarmasiMarketPlace.API.Controllers
         };
 
         private readonly ILogger<WeatherForecastController> _logger;
+        private readonly ICategoryService _categoryService;
 
-        public WeatherForecastController(ILogger<WeatherForecastController> logger)
+        public WeatherForecastController(ILogger<WeatherForecastController> logger, ICategoryService categoryService)
         {
             _logger = logger;
+            _categoryService = categoryService;
         }
 
         [HttpGet]
@@ -34,6 +37,14 @@ namespace FarmasiMarketPlace.API.Controllers
                 Summary = Summaries[rng.Next(Summaries.Length)]
             })
             .ToArray();
+        }
+
+        [HttpPost]
+        public IActionResult GetCategories()
+        {
+            var response = _categoryService.GetCategories();
+
+            return Ok(response);
         }
     }
 }

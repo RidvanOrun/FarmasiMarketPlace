@@ -6,6 +6,7 @@ using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 
 namespace FarmasiMarketPlace.DAL.Repositories
@@ -16,7 +17,7 @@ namespace FarmasiMarketPlace.DAL.Repositories
 
         public MongoRepository(IMongoDbSettings settings)
         {
-            var database = new MongoClient(settings.ConnectionString).GetDatabase(settings.DatabaseName);
+            var database = new MongoClient("mongodb+srv://admin:Q4DGh4FDSiT2EC2R@humanious.gkauw.mongodb.net/humanious_core?retryWrites=true&w=majority").GetDatabase("brl_humanious");
             _collection = database.GetCollection<TDocument>(GetCollectionName(typeof(TDocument)));
         }
 
@@ -50,6 +51,75 @@ namespace FarmasiMarketPlace.DAL.Repositories
         public IAggregateFluent<TDocument> Aggregate(AggregateOptions options = null)
         {
             return _collection.Aggregate(options);
+        }
+
+        public RepositoryResponse<List<TDocument>> FilterBy(Expression<Func<TDocument, bool>> filterExpression)
+        {
+            var response = new RepositoryResponse<List<TDocument>> { };
+
+            try
+            {
+                response.Result = _collection.Find(filterExpression)
+                    .ToList();
+            }
+            catch (Exception ex)
+            {
+                response.Successed = false;
+                response.Message = ex.Message;
+            }
+
+            return response;
+        }
+
+        public RepositoryResponse<TDocument> FindOne(Expression<Func<TDocument, bool>> filterExpression)
+        {
+            var response = new RepositoryResponse<TDocument> { };
+
+            try
+            {
+                response.Result = _collection.Find(filterExpression).FirstOrDefault();
+            }
+            catch (Exception ex)
+            {
+                response.Successed = false;
+                response.Message = ex.Message;
+            }
+
+            return response;
+        }
+
+        public RepositoryResponse<TDocument> ReplaceOne(TDocument document)
+        {
+            var response = new RepositoryResponse<TDocument> { };
+            try
+            {
+                var filter = Builders<TDocument>.Filter.Eq(doc => doc.Id, document.Id);
+                _collection.FindOneAndReplace(filter, document);
+                response.Result = document;
+            }
+            catch (Exception ex)
+            {
+                response.Successed = false;
+                response.Message = ex.Message;
+            }
+            return response;
+        }
+
+        public RepositoryResponse DeleteOne(Expression<Func<TDocument, bool>> filterExpression)
+        {
+            var response = new RepositoryResponse { };
+
+            try
+            {
+                _collection.FindOneAndDelete(filterExpression);
+            }
+            catch (Exception ex)
+            {
+                response.Successed = false;
+                response.Message = ex.Message;
+            }
+
+            return response;
         }
     }
 }

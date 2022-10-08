@@ -4,7 +4,7 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace FarmasiMarketPlace.Entities.Model
 {
-    [BsonCollection("product")]
+    [BsonCollection("products")]
     public class Product : Document
     {
         [BsonRepresentation(BsonType.ObjectId)]

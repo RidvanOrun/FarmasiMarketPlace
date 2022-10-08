@@ -7,6 +7,6 @@ namespace FarmasiMarketPlace.Business.Model
 {
     public class CategoryModel : BaseModel
     {
-        public string CategoryName { get; set; }
+        public string Name { get; set; }
     }
 }

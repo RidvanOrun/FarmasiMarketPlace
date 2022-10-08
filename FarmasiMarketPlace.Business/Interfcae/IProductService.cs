@@ -8,7 +8,7 @@ namespace FarmasiMarketPlace.Business.Interfcae
 {
     public interface IProductService
     {
-        ServiceResponse<ProductModel> CreateProduct(ProductModel product);
+        ServiceResponse<ProductModel> CreateProduct(ProductModel model);
 
         ServiceResponse<List<ProductModel>> GetProducts();
     }

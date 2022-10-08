@@ -1,5 +1,7 @@
 ﻿using FarmasiMarketPlace.Business.Interfcae;
+using FarmasiMarketPlace.Business.Model;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Caching.Distributed;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,21 +9,21 @@ using System.Threading.Tasks;
 
 namespace FarmasiMarketPlace.API.Controllers
 {
-    public class CategoryController :BaseController<CategoryController>
+    [ApiController]
+    [Route("[controller]")]
+    public class CategoryController : BaseController<CategoryController>
     {
-
         private readonly ICategoryService _categoryService;
 
-        public CategoryController(ICategoryService productService)
+        public CategoryController(ICategoryService categoryService , IDistributedCache distributedCache)
         {
-            _categoryService = productService;
+            _categoryService = categoryService;
         }
 
-        [HttpGet, Route("")]
+        [HttpGet]
         public IActionResult GetCategories()
         {
-
-            var response = _categoryService.
+            var response = _categoryService.GetCategories();
 
             if (!response.Successed)
             {
@@ -32,10 +34,22 @@ namespace FarmasiMarketPlace.API.Controllers
         }
 
         [HttpPost, Route("")]
-        public IActionResult CreateProducts([FromBody] ProductModel model)
+        public IActionResult CreateCategory([FromBody] CategoryModel model)
         {
+            var response = _categoryService.CreateCategory(model);
 
-            var response = _productService.CreateProduct(model);
+            if (!response.Successed)
+            {
+                return APIResponse(response);
+            }
+
+            return Ok(response);
+        }
+
+        [HttpPost, Route("delete/{id}")]
+        public IActionResult RemoveCategory([FromRoute] string id)
+        {
+            var response = _categoryService.RemoveCategory(id);
 
             if (!response.Successed)
             {

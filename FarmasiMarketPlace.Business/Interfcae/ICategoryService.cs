@@ -8,12 +8,12 @@ namespace FarmasiMarketPlace.Business.Interfcae
 {
     public interface ICategoryService
     {
-        ServiceResponse<CategoryModel> CreateCategory(CategoryModel product);
+        ServiceResponse<CategoryModel> CreateCategory(CategoryModel model);
 
-        ServiceResponse<CategoryModel> RemoveCategories(CategoryModel product);
+        ServiceResponse<CategoryModel> RemoveCategory(string id);
 
-        ServiceResponse<CategoryModel> UpdateCategories(CategoryModel product);
+        ServiceResponse<CategoryModel> UpdateCategories(CategoryModel model);
 
-        ServiceResponse<List<CategoryModel>> GetCategories(CategoryModel product);        
+        ServiceResponse<List<CategoryModel>> GetCategories();        
     }
 }

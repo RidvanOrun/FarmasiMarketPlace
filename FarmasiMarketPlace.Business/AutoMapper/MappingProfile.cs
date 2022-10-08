@@ -12,36 +12,43 @@ namespace FarmasiMarketPlace.Business.AutoMapper
     {
         public MappingProfile()
         {
-            CreateUserMappings();
-            CreateProductMappings();
-            CreateCategoryMappings();
-
-            CreateMap<string, ObjectId?>().ConvertUsing(s => StringToObjectTypeConverter(s));
+            CreateMap<CategoryModel, Category>().ReverseMap();
+            CreateMap<Category, CategoryModel>().ReverseMap();
         }
 
-        public ObjectId? StringToObjectTypeConverter(string source)
-        {
-            if (string.IsNullOrEmpty(source))
-            {
-                return null;
-            }
-            return ObjectId.Parse(source);
-        }
+        //public MappingProfile()
+        //{
+        //    CreateUserMappings();
+        //    CreateProductMappings();
+        //    CreateCategoryMappings();
 
-        public void CreateUserMappings()
-        {
-            CreateMap<UserModel, User>().ReverseMap();
-        }
+        //    CreateMap<string, ObjectId?>().ConvertUsing(s => StringToObjectTypeConverter(s));
+        //}
 
-        public void CreateProductMappings()
-        {
-            CreateMap<ProductModel, User>().ReverseMap();
-        }
+        //public ObjectId? StringToObjectTypeConverter(string source)
+        //{
+        //    if (string.IsNullOrEmpty(source))
+        //    {
+        //        return null;
+        //    }
+        //    return ObjectId.Parse(source);
+        //}
 
-        public void CreateCategoryMappings()
-        {
-            CreateMap<CategoryModel, User>().ReverseMap();
-        }
+        //public void CreateUserMappings()
+        //{
+        //    CreateMap<UserModel, User>().ReverseMap();
+        //}
+
+        //public void CreateProductMappings()
+        //{
+        //    CreateMap<ProductModel, Product>().ReverseMap();
+        //}
+
+        //public void CreateCategoryMappings()
+        //{
+        //    CreateMap<CategoryModel, Category>();
+        //    CreateMap<Category, CategoryModel>().ReverseMap();
+        //}
 
     }
 }

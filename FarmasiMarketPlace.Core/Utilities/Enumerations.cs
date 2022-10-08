@@ -9,4 +9,10 @@ namespace FarmasiMarketPlace.Core.Utilities
         Active = 30,
         Passive = -30,
     }
+
+    public enum CartStatus
+    {
+        Active = 30,
+        Passive = -30,
+    }
 }

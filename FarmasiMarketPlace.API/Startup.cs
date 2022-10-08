@@ -1,5 +1,7 @@
 ﻿using FarmasiMarketPlace.Business.AutoMapper;
+using FarmasiMarketPlace.DAL.Interface;
 using FarmasiMarketPlace.DAL.MongoDbSettings;
+using FarmasiMarketPlace.DAL.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -30,9 +32,13 @@ namespace FarmasiMarketPlace.API
         {
             services.Configure<MongoDbSettings>(Configuration.GetSection("MongoDbSettings"));
 
-            //services.AddAutoMapper(typeof(MappingProfile));
+            services.AddScoped(typeof(IMongoRepository<>), typeof(MongoRepository<>));
 
             services.AddControllers();
+
+            services.AddAutoMapper(typeof(MappingProfile));
+
+            services.AddHttpContextAccessor();
 
             services.AddSwaggerGen(c =>
             {
@@ -49,6 +55,12 @@ namespace FarmasiMarketPlace.API
                     }
                 });
             });
+
+            services.AddStackExchangeRedisCache(action =>
+            {
+                action.Configuration = "localhost:44388";
+            });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

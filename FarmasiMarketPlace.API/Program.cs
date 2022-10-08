@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
+
 namespace FarmasiMarketPlace.API
 {
     public class Program
@@ -28,7 +29,7 @@ namespace FarmasiMarketPlace.API
             })
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
-                    webBuilder.UseStartup<Startup>();
+                    webBuilder.UseStartup<Startup>();                    
                 });
     }
 }

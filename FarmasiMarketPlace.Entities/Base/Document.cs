@@ -14,12 +14,14 @@ namespace FarmasiMarketPlace.Entities.Base
         [BsonRepresentation(BsonType.ObjectId)]
         public string Id { get; set; }
 
-        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+        private DateTime _createDate = DateTime.Now;
+        public DateTime CreatedAt { get => _createDate; set => _createDate = value; }
 
         public DateTime? UpdatedAt { get; set; }
 
         public DateTime? DeletedAt { get; set; }
 
         public EntityStatus Status { get; set; } = EntityStatus.Active;
+
     }
 }

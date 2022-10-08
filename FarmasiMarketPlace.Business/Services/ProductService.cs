@@ -11,6 +11,7 @@ using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
+using Microsoft.AspNetCore.Http;
 using System.Text;
 
 namespace FarmasiMarketPlace.Business.Services
@@ -26,11 +27,11 @@ namespace FarmasiMarketPlace.Business.Services
             _mapper = mapper;
         }
 
-        public ServiceResponse<ProductModel> CreateProduct(ProductModel productModel)
+        public ServiceResponse<ProductModel> CreateProduct(ProductModel model)
         {
             var res = new ServiceResponse<ProductModel> { };
 
-            var product = _mapper.Map<Product>(productModel);
+            var product = _mapper.Map<Product>(model);
 
             var resProduct = _productRepository.InsertOne(product);
 

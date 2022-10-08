@@ -8,6 +8,8 @@ using System.Threading.Tasks;
 
 namespace FarmasiMarketPlace.API.Controllers
 {
+    [Route("api/v1/products")]
+    [ApiController]
     public class ProductController : BaseController<ProductController>
     {
         private readonly IProductService _productService;
