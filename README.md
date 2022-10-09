@@ -2,7 +2,9 @@ Merhaba;
 
 Projemde .NetCore, katmanlı mimarı , Generic Repository Disayn Pattern, Wep-Apı, Mongo Db ve Redis teknolojilerini kullandım. 
 
-Mongo Db de CRUD işlemlerini yaptığım. Ürünleri sepete ekleneme işlemini Redis ile yönettiğim bir proje geliştirdim. 
+Mongo Db de CRUD işlemlerini yaptım ve mongo db nin get ve post sorgularındaki yetneklerini yansıtmaya çalıştım.
+
+Ürünleri sepete ekleme işlemini Redis ile yönettiğim bir proje geliştirdim.  
 
 Temel amacım Mongo Db ve redis olduğu için Swager ile servislerimi yönettim.
 
@@ -18,9 +20,9 @@ Asp.NetCore => [*RidvanOrun/GitBook/.NetCore*](https://ridvanorun.gitbook.io/asp
 
 Generic Repository Design Pattern =>[*RidvanOrun/GitBook/DesingPattern*](https://ridvanorun.gitbook.io/desing-patterns/)
 
-DTO, VM, AutoMapper =>[*RidvanOrun/GitBook/ObjectOperation*](https://ridvanorun.gitbook.io/object-operation/)
+AutoMapper =>[*RidvanOrun/GitBook/ObjectOperation*](https://ridvanorun.gitbook.io/object-operation/)
 
-REDİS => [*https://www.c-sharpcorner.com/article/implementation-of-the-redis-cache-in-the-net-core-api/)
+REDİS => [*www.c-sharpcorner.com](https://www.c-sharpcorner.com/article/implementation-of-the-redis-cache-in-the-net-core-api/)
 
 ## Domain-Driven-Design/DDD
 
