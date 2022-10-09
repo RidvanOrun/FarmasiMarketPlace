@@ -8,6 +8,8 @@ Mongo Db de CRUD işlemlerini yaptım ve Mongo Db yeteneklerini kullanmaya çal�
 
 Temel amacım Mongo Db ve redis olduğu için servislerimi Swager ile yönettim.
 
+Projede temel amacım yukarıda bahsettiğim teknolojiler olsada OOP SOLİD ve generic yapıyı elimden geldiğinde korumaya çalışarak olabilidğince clean kod yazmaya çalıştım.
+
 Kullandığım teknolojiler ile ilgili kendi dokumanlarım ve yararlandığım diğer dökümanlar aşağıdadır.
 
 ## Kullandığım teknolojiler;
