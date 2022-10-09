@@ -22,7 +22,7 @@ Generic Repository Design Pattern =>[*RidvanOrun/GitBook/DesingPattern*](https:/
 
 AutoMapper =>[*RidvanOrun/GitBook/ObjectOperation*](https://ridvanorun.gitbook.io/object-operation/)
 
-REDİS => [*www.c-sharpcorner.com](https://www.c-sharpcorner.com/article/implementation-of-the-redis-cache-in-the-net-core-api/)
+REDİS => [*www.c-sharpcorner.com](https://www.c-sharpcorner.com/article/implementation-of-the-redis-cache-in-the-net-core-api/) , [*www.borakasmer.com](https://www.borakasmer.com/net-coreda-redis-cache-kullanimi/)
 
 ## SohppingCart/REDİS
 
