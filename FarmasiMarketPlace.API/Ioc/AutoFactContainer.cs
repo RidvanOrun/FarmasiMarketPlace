@@ -19,6 +19,8 @@ namespace FarmasiMarketPlace.API.Ioc
             builder.RegisterType<CategoryService>().As<ICategoryService>().InstancePerLifetimeScope();
             builder.RegisterType<ProductService>().As<IProductService>().InstancePerLifetimeScope();
             builder.RegisterType<MongoDbSettings>().As<IMongoDbSettings>().InstancePerLifetimeScope();
+            builder.RegisterType<RedisService>().As<IRedisService>().InstancePerLifetimeScope();
+            builder.RegisterType<ShoppingCartService>().As<IShoppingCartService>().InstancePerLifetimeScope();
             //builder.RegisterType<UnitOfWork>().As<IUnitOfWork>().InstancePerLifetimeScope();
         }
     }

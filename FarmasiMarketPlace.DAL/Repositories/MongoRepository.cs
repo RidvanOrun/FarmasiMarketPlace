@@ -17,7 +17,7 @@ namespace FarmasiMarketPlace.DAL.Repositories
 
         public MongoRepository(IMongoDbSettings settings)
         {
-            var database = new MongoClient("mongodb+srv://admin:Q4DGh4FDSiT2EC2R@humanious.gkauw.mongodb.net/humanious_core?retryWrites=true&w=majority").GetDatabase("brl_humanious");
+            var database = new MongoClient("mongodb+srv://admin:Q4DGh4FDSiT2EC2R@humanious.gkauw.mongodb.net/humanious_core?retryWrites=true&w=majority").GetDatabase("hmns_UpFamily");
             _collection = database.GetCollection<TDocument>(GetCollectionName(typeof(TDocument)));
         }
 

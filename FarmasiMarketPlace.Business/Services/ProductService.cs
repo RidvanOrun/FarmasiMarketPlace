@@ -21,10 +21,13 @@ namespace FarmasiMarketPlace.Business.Services
         private readonly IMongoRepository<Product> _productRepository;
         private readonly IMapper _mapper;
 
-        public ProductService(IMongoRepository<Product> productRepository,IMapper mapper, IHttpContextAccessor httpContextAccessor) : base (httpContextAccessor)
+        private readonly IRedisService _redisService;
+
+        public ProductService(IRedisService redisService, IMongoRepository<Product> productRepository,IMapper mapper, IHttpContextAccessor httpContextAccessor) : base (httpContextAccessor)
         {
             _productRepository = productRepository;
             _mapper = mapper;
+            _redisService = redisService;
         }
 
         public ServiceResponse<ProductModel> CreateProduct(ProductModel model)
@@ -32,6 +35,7 @@ namespace FarmasiMarketPlace.Business.Services
             var res = new ServiceResponse<ProductModel> { };
 
             var product = _mapper.Map<Product>(model);
+            product.Id = null;
 
             var resProduct = _productRepository.InsertOne(product);
 
@@ -47,13 +51,19 @@ namespace FarmasiMarketPlace.Business.Services
 
 
             Expression<Func<Product, bool>> filterPredicate = PredicateBuilder.New<Product>(true);
+            filterPredicate = filterPredicate.And(x => x.Id == product.Id);
+
+            AggregateUnwindOptions<ProductLookedUp> unwindOptions = new AggregateUnwindOptions<ProductLookedUp>() { PreserveNullAndEmptyArrays = true };
 
             var lookedUp = _productRepository.Aggregate()
                 .Match(filterPredicate)
-                .Lookup<Product, ProductLookedUp>("categories", "CategoryIds", "Id", "Categories")
+                .Lookup<Product, ProductLookedUp>("categories", "CategoryId", "Id", "Category")
+                .Unwind(x => x.Category, unwindOptions)
+                .As<ProductLookedUp>()
                 .FirstOrDefault();
 
             res.Result = _mapper.Map<ProductModel>(lookedUp);
+
 
             return res;
         }
@@ -62,8 +72,12 @@ namespace FarmasiMarketPlace.Business.Services
         {
             var res = new ServiceResponse<List<ProductModel>> { };
 
+            AggregateUnwindOptions<ProductLookedUp> unwindOptions = new AggregateUnwindOptions<ProductLookedUp>() { PreserveNullAndEmptyArrays = true };
+
             var lookedUp = _productRepository.Aggregate()
-                .Lookup<Product, ProductLookedUp>("categories", "CategoryIds", "Id", "Categories")
+                .Lookup<Product, ProductLookedUp>("categories", "CategoryId", "Id", "Category")
+                .Unwind(x => x.Category, unwindOptions)
+                .As<ProductLookedUp>()
                 .ToList();
 
             res.Result = _mapper.Map<List<ProductModel>>(lookedUp);

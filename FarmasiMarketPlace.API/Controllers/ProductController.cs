@@ -13,10 +13,12 @@ namespace FarmasiMarketPlace.API.Controllers
     public class ProductController : BaseController<ProductController>
     {
         private readonly IProductService _productService;
+        private readonly IShoppingCartService _shoppingCartService;
 
-        public ProductController(IProductService productService)
+        public ProductController(IProductService productService, IShoppingCartService shoppingCartService)
         {
             _productService = productService;
+            _shoppingCartService = shoppingCartService;
         }
 
         [HttpGet, Route("")]

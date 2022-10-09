@@ -11,7 +11,7 @@ namespace FarmasiMarketPlace.Entities.Model
     [BsonCollection("shoppnigCarts")]
     public class ShoppingCart : Document
     {
-        public User User { get; set; }
+        //public User User { get; set; }
 
         public ProductLookedUp Product { get; set; }
 

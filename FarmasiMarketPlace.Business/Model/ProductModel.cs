@@ -15,7 +15,7 @@ namespace FarmasiMarketPlace.Business.Model
 
         #region [ LookedUp Fields ]
 
-        public CategoryModel Category { get; set; }
+        //public CategoryModel Category { get; set; }
 
         #endregion
     }

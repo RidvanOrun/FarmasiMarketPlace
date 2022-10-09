@@ -9,5 +9,7 @@ namespace FarmasiMarketPlace.Business.Interfcae
         ServiceResponse<ShoppingCart> AddCart(ShoppingCartModel model);
 
         ServiceResponse<ShoppingCart> RemoveCart(ShoppingCartModel model);
+
+        ServiceResponse<ShoppingCart> GetCart();
     }
 }

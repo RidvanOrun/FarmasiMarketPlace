@@ -12,8 +12,11 @@ namespace FarmasiMarketPlace.Business.AutoMapper
     {
         public MappingProfile()
         {
-            CreateMap<CategoryModel, Category>().ReverseMap();
-            CreateMap<Category, CategoryModel>().ReverseMap();
+            CreateMap<CategoryModel, Category>();
+            CreateMap<Category, CategoryModel>();
+
+            CreateMap<Product, ProductModel>();
+            CreateMap<ProductModel, Product>();
         }
 
         //public MappingProfile()

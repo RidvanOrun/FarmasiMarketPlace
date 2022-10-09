@@ -9,18 +9,16 @@ namespace FarmasiMarketPlace.Business.Base
     public class BaseModel
     {
 
-        [JsonProperty(Order = -2)]
+        [JsonProperty]
         public string Id { get; set; }
 
-        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+        //public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 
-        public DateTime? UpdatedAt { get; set; }
+        //public DateTime? UpdatedAt { get; set; }
 
-        public DateTime? DeletedAt { get; set; }
+        //public DateTime? DeletedAt { get; set; }
 
-        public EntityStatus Status { get; set; } = EntityStatus.Active;
-
-        public bool IsAllGroups { get; set; } = false;
+        //public EntityStatus Status { get; set; } = EntityStatus.Active;
 
     }
 }
