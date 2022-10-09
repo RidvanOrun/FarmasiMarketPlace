@@ -2,13 +2,13 @@ Merhaba;
 
 Projemde .NetCore, katmanlı mimarı , Generic Repository Disayn Pattern, Wep-Apı, Mongo Db ve Redis teknolojilerini kullandım. 
 
-Mongo Db de CRUD işlemlerini yaptım ve mongo db nin get ve post sorgularındaki yetneklerini yansıtmaya çalıştım.
+Mongo Db de CRUD işlemlerini yaptım ve Mongo Db yetneklerini kullanmaya çalıştım.
 
 Ürünleri sepete ekleme işlemini Redis ile yönettiğim bir proje geliştirdim.  
 
-Temel amacım Mongo Db ve redis olduğu için Swager ile servislerimi yönettim.
+Temel amacım Mongo Db ve redis olduğu için servislerimi Swager ile yönettim.
 
-Kullandığım tekneolojiler ile ilgili kendi dokumanlarım ve yararlandığım diğer dökümanlar
+Kullandığım teknolojiler ile ilgili kendi dokumanlarım ve yararlandığım diğer dökümanlar aşağıdadır.
 
 ## Kullandığım teknolojiler;
 
@@ -24,8 +24,8 @@ AutoMapper =>[*RidvanOrun/GitBook/ObjectOperation*](https://ridvanorun.gitbook.i
 
 REDİS => [*www.c-sharpcorner.com](https://www.c-sharpcorner.com/article/implementation-of-the-redis-cache-in-the-net-core-api/)
 
-## Domain-Driven-Design/DDD
+## SohppingCart/REDİS
 
 ![Image of redis](## redis
 
-![Image of redis](https://gblobscdn.gitbook.com/assets%2F-MRpQvkt_cZoERWOLez2%2F-MSyEepRHHQsQZHVovex%2F-MSyEm2U6nsFqGC4WKc7%2FDDDGithup.png?alt=media&token=5738b2b4-0fc0-430d-8b16-f30cdaa73182))
+![Image of redis](https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FGCfkaESkuLEjtF9kvee0%2Fuploads%2FErxkxbmLcktH2JSNX9Ma%2F6276ff32-dcb7-4631-8380-c206e911afbf.jpg?alt=media&token=fc12e96d-bfa2-4915-9bf7-865d210add4e)
