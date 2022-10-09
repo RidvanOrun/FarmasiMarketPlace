@@ -28,4 +28,4 @@ REDİS => [*www.c-sharpcorner.com](https://www.c-sharpcorner.com/article/impleme
 
 ![Image of redis](## redis
 
-![Image of redis](https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FGCfkaESkuLEjtF9kvee0%2Fuploads%2FErxkxbmLcktH2JSNX9Ma%2F6276ff32-dcb7-4631-8380-c206e911afbf.jpg?alt=media&token=fc12e96d-bfa2-4915-9bf7-865d210add4e)
+![Image of redis](https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FGCfkaESkuLEjtF9kvee0%2Fuploads%2FErxkxbmLcktH2JSNX9Ma%2F6276ff32-dcb7-4631-8380-c206e911afbf.jpg?alt=media&token=fc12e96d-bfa2-4915-9bf7-865d210add4e))
