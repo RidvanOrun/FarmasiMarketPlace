@@ -47,7 +47,7 @@ namespace FarmasiMarketPlace.API.Controllers
             return Ok(response);
         }
 
-        [HttpDelete, Route("")]
+        [HttpDelete, Route("remove")]
         public IActionResult RemoveCart()
         {
             var response = _shoppingCartService.RemoveCart();

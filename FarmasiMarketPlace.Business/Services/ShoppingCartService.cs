@@ -35,8 +35,6 @@ namespace FarmasiMarketPlace.Business.Services
         {
             var res = new ServiceResponse<ShoppingCart> { };
 
-            //var user = _userCartRepository.FindOne(x => x.Id == model.UserId).Result;
-
             Expression<Func<Product, bool>> filterPredicate = PredicateBuilder.New<Product>(true);
 
             filterPredicate = filterPredicate.And(x => x.Id == model.ProductId);

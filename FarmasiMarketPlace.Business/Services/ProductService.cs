@@ -21,13 +21,10 @@ namespace FarmasiMarketPlace.Business.Services
         private readonly IMongoRepository<Product> _productRepository;
         private readonly IMapper _mapper;
 
-        private readonly IRedisService _redisService;
-
-        public ProductService(IRedisService redisService, IMongoRepository<Product> productRepository,IMapper mapper, IHttpContextAccessor httpContextAccessor) : base (httpContextAccessor)
+        public ProductService(IMongoRepository<Product> productRepository,IMapper mapper, IHttpContextAccessor httpContextAccessor) : base (httpContextAccessor)
         {
             _productRepository = productRepository;
             _mapper = mapper;
-            _redisService = redisService;
         }
 
         public ServiceResponse<ProductModel> CreateProduct(ProductModel model)
@@ -68,9 +65,9 @@ namespace FarmasiMarketPlace.Business.Services
             return res;
         }
 
-        public ServiceResponse<List<ProductModel>> GetProducts()
+        public ServiceResponse<List<ProductViewModel>> GetProducts()
         {
-            var res = new ServiceResponse<List<ProductModel>> { };
+            var res = new ServiceResponse<List<ProductViewModel>> { };
 
             AggregateUnwindOptions<ProductLookedUp> unwindOptions = new AggregateUnwindOptions<ProductLookedUp>() { PreserveNullAndEmptyArrays = true };
 
@@ -80,7 +77,7 @@ namespace FarmasiMarketPlace.Business.Services
                 .As<ProductLookedUp>()
                 .ToList();
 
-            res.Result = _mapper.Map<List<ProductModel>>(lookedUp);
+            res.Result = _mapper.Map<List<ProductViewModel>>(lookedUp);
 
             return res;
         }

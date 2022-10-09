@@ -17,6 +17,9 @@ namespace FarmasiMarketPlace.Business.AutoMapper
 
             CreateMap<Product, ProductModel>();
             CreateMap<ProductModel, Product>();
+
+            CreateMap<ProductViewModel, ProductLookedUp>();
+            CreateMap<ProductLookedUp, ProductViewModel>();
         }
 
         //public MappingProfile()

@@ -10,6 +10,6 @@ namespace FarmasiMarketPlace.Business.Interfcae
     {
         ServiceResponse<ProductModel> CreateProduct(ProductModel model);
 
-        ServiceResponse<List<ProductModel>> GetProducts();
+        ServiceResponse<List<ProductViewModel>> GetProducts();
     }
 }
