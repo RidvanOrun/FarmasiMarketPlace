@@ -18,17 +18,15 @@ namespace FarmasiMarketPlace.Business.Services
     public class ShoppingCartService : BaseService<ShoppingCartService>, IShoppingCartService
     {
         private readonly IMongoRepository<ShoppingCart> _shoppingCartRepository;
-        private readonly IMongoRepository<User> _userCartRepository;
         private readonly IMongoRepository<Product> _productRepository;
         private readonly IMapper _mapper;
 
         private readonly IRedisService _redisService;
 
-        public ShoppingCartService(IRedisService redisService, IMongoRepository<ShoppingCart> shoppingCartRepository, IMapper mapper, IMongoRepository<User> userCartRepository, IMongoRepository<Product> productRepository, IHttpContextAccessor httpContextAccessor) : base(httpContextAccessor)
+        public ShoppingCartService(IRedisService redisService, IMongoRepository<ShoppingCart> shoppingCartRepository, IMapper mapper, IMongoRepository<Product> productRepository, IHttpContextAccessor httpContextAccessor) : base(httpContextAccessor)
         {
             _shoppingCartRepository = shoppingCartRepository;
             _mapper = mapper;
-            _userCartRepository = userCartRepository;
             _productRepository = productRepository;
             _redisService = redisService;
         }
@@ -53,7 +51,6 @@ namespace FarmasiMarketPlace.Business.Services
                 .FirstOrDefault();
 
             var cart = new ShoppingCart();
-            //cart.User = user;
             cart.Product = lookedUp;
             cart.Count = model.Count;
 
@@ -74,20 +71,27 @@ namespace FarmasiMarketPlace.Business.Services
         {
             var res = new ServiceResponse<ShoppingCart> { };
 
+            var cartItem = _redisService.GetData<ShoppingCart>("shoppingCart");
+
+            if (cartItem != null)
+            {
+                res.Successed = false;
+            }
+
+            res.Result = cartItem;
 
             return res;
         }
 
-        public ServiceResponse<ShoppingCart> RemoveCart(ShoppingCartModel model)
+        public ServiceResponse<object> RemoveCart()
         {
-            throw new NotImplementedException();
+            var res = new ServiceResponse<object> { };
+
+            var cartItem = _redisService.RemoveData("shoppingCart");
+
+            res.Result = cartItem;
+
+            return res;
         }
-
-        //public ServiceResponse<ShoppingCart> RemoveItemFromCart(ShoppingCartModel model)
-        //{
-        //    var res = new ServiceResponse<ShoppingCart> { };
-
-        //    return res;
-        //}
     }
 }

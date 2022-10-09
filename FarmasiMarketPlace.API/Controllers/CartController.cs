@@ -20,46 +20,15 @@ namespace FarmasiMarketPlace.API.Controllers
             _shoppingCartService = shoppingCartService;
         }
 
-        //[HttpGet, Route("")]
-        //public IActionResult GetCart()
-        //{
-        //    var redisData = _redisService.GetData<ShoppingCart>("shppingCarts");
-
-        //    if (redisData != null)
-        //    {
-        //        return Ok(redisData);
-        //    }
-
-        //    var response = _productService.GetProducts();
-
-        //    if (!response.Successed)
-        //    {
-        //        return APIResponse(response);
-        //    }
-
-        //    return Ok(response);
-        //}
-
         [HttpPost, Route("")]
         public IActionResult AddCart([FromBody] ShoppingCartModel model)
         {
-
             var response = _shoppingCartService.AddCart(model);
-                
 
-            //var redisData = _redisService.GetData<ShoppingCart>("shppingCarts");
-
-            //if (redisData != null)
-            //{
-            //    return Ok(redisData);
-            //}
-
-            //var response = _productService.GetProducts();
-
-            //if (!response.Successed)
-            //{
-            //    return APIResponse(response);
-            //}
+            if (!response.Successed)
+            {
+                return APIResponse(response);
+            }
 
             return Ok(response);
         }
@@ -68,23 +37,25 @@ namespace FarmasiMarketPlace.API.Controllers
         [HttpGet, Route("")]
         public IActionResult Cart()
         {
+            var response = _shoppingCartService.GetCart();
 
-            var response = _shoppingCartService.
+            if (!response.Successed)
+            {
+                return APIResponse(response);
+            }
 
+            return Ok(response);
+        }
 
-            //var redisData = _redisService.GetData<ShoppingCart>("shppingCarts");
+        [HttpDelete, Route("")]
+        public IActionResult RemoveCart()
+        {
+            var response = _shoppingCartService.RemoveCart();
 
-            //if (redisData != null)
-            //{
-            //    return Ok(redisData);
-            //}
-
-            //var response = _productService.GetProducts();
-
-            //if (!response.Successed)
-            //{
-            //    return APIResponse(response);
-            //}
+            if (!response.Successed)
+            {
+                return APIResponse(response);
+            }
 
             return Ok(response);
         }
