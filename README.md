@@ -26,4 +26,4 @@ REDİS => [*www.c-sharpcorner.com](https://www.c-sharpcorner.com/article/impleme
 
 ## SohppingCart/REDİS
 
-![Image of redis](https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FGCfkaESkuLEjtF9kvee0%2Fuploads%2FErxkxbmLcktH2JSNX9Ma%2F6276ff32-dcb7-4631-8380-c206e911afbf.jpg?alt=media&token=fc12e96d-bfa2-4915-9bf7-865d210add4e)
+![Image of redis](https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FGCfkaESkuLEjtF9kvee0%2Fuploads%2FuNaPmtARExNqimo8u7vW%2Fdb52ff96-5eeb-4a4b-baf1-16c42caede94.jpg?alt=media&token=57f81117-740d-432b-9de0-2825dca4e0de)
