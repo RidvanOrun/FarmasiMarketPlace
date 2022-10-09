@@ -2,7 +2,7 @@ Merhaba;
 
 Projemde .NetCore, katmanlı mimarı , Generic Repository Disayn Pattern, Wep-Apı, Mongo Db ve Redis teknolojilerini kullandım. 
 
-Mongo Db de CRUD işlemlerini yaptım ve Mongo Db yetneklerini kullanmaya çalıştım.
+Mongo Db de CRUD işlemlerini yaptım ve Mongo Db yeteneklerini kullanmaya çalıştım.
 
 Ürünleri sepete ekleme işlemini Redis ile yönettiğim bir proje geliştirdim.  
 
